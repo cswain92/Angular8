@@ -1,0 +1,16 @@
+<div class="container">
+   <div class="card-deck">
+       <div class="card" *ngFor="let car of cars">
+            <div class="card-header text-center">
+                <h3>{{car.Name}}</h3>
+            </div>
+            <div class="card-body text-center">
+                <img [src]="car.Photo" height="200" width="200" class="img-thumbnail">
+            </div>
+            <div class="card-footer text-center">
+                <button class="btn btn-sm btn-success" (click)="LikesClick(car)">[{{car.Likes}}]Likes</button>
+                <button class="btn btn-sm btn-danger" (click)="DislikesClick(car)">[{{car.Dislikes}}]Dislikes</button>
+            </div>
+       </div>
+   </div>
+</div>
