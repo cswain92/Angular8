@@ -1,0 +1,22 @@
+<div class="container">
+        <h2 style="color: red; font-family: bold;">Select the checkbox to watch</h2>
+    <app-filter (CheckboxChangedEvent)="CategoryChanged($event)" [AllCount]="AllCount" [ElectronicsCount]="ElectronicsCount" [ShoesCount]="ShoesCount"></app-filter>
+   <div class="form-group">
+        <table class="table tab-content">
+                <thead class="thead-light">
+                   <tr style="font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                         <td>Name</td>
+                         <td>Price</td>
+                         <td>Category</td>
+                   </tr>
+                </thead>
+                <tbody *ngFor="let product of products">
+                    <tr style="color: darkcyan;">
+                         <td>{{product.Name}}</td>
+                         <td>{{product.Price}}</td>
+                         <td>{{product.Category}}</td>
+                    </tr>
+                </tbody>
+            </table>
+   </div>
+</div> 

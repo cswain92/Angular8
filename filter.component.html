@@ -1,0 +1,19 @@
+<div class="container">
+  <form  [(ngModel)]="checked">
+        <div class="form-group custom-checkbox "  >
+        
+                <ol>
+                    <li>
+                        <input  type="checkbox" (change)="CheckChange()" name="All" value="All">All[{{AllCount}}]
+                    </li>
+                    <li>
+                         <input  type="checkbox"   (change)="CheckChange()" name="Electronics" value="Electronics">Electronics[{{ElectronicsCount}}]
+                     </li>
+                     <li>
+                             <input type="checkbox"  (change)="CheckChange()" name="Shoes" value="Shoes">Shoes[{{ShoesCount}}]
+                     </li>
+                
+                </ol>
+        </div>
+  </form>
+</div>

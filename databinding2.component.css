@@ -1,0 +1,23 @@
+ dt{
+    font-weight: bold;
+}
+div{
+    width: 300px;
+    border: 2px groove darkcyan;
+    padding: 10px;
+    margin: 10px;
+    margin-left: 10px;
+    float: left;
+    border-radius: 20px;
+    
+   
+}
+h2{
+    text-align: center;
+    
+
+}
+input{
+    border-radius: 5px;
+    
+} 

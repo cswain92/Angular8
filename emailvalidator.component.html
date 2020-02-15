@@ -1,0 +1,56 @@
+<div [ngClass]="{extraDivShow:extraDiv}" style="border: 1px solid darkcyan;">
+       <h2 class="btn btn-lg">{{msgSuccess}}</h2><br>
+        <p class="btn btn-outline-primary"><b>Name:</b>{{frmRegister.value.firstName}} {{frmRegister.value.lastName}}</p>
+        <p class="btn btn-outline-success"><b>Email:</b>{{frmRegister.value.txtEmail}}</p>
+        <p class="btn btn-outline-danger"><b>Password:</b>{{frmRegister.value.txtPwd}}</p>
+        <p class="btn btn-outline-danger"><b>lang: {{frmRegister.value.language}}</b></p>
+    </div>
+<form [ngClass]="{mainFormShow:mainForm}" novalidate name="frmRegister" #frmRegister="ngForm" ngForm class="container" (ngSubmit)="onSubmit()">
+    <fieldset><legend><h2 class="text-center ">Registration Form</h2></legend>
+        <div class="form-group">
+            <label>First Name</label>
+            <input type="text" class="form-control"  name="firstName" #firstName="ngModel" ngModel required>
+            <div *ngIf="firstName.errors  && (firstName.dirty || firstName.touched)" class="form-control-feedback">
+                <p *ngIf="firstName.errors.required" class="text-danger">First name is required</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control" name="lastName" #lastName="ngModel" ngModel required>
+            <div *ngIf="lastName.errors && (lastName.dirty || lastName.touched)" class="form-control-feedback">
+                <p *ngIf="lastName.errors.required" class="text-danger">Last name is required</p>
+            </div>
+        </div>
+    </fieldset>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" (keyup)="VerifyEmail(txtEmail.value)" emailDomain name="txtEmail" #txtEmail="ngModel" ngModel required pattern="[^@]*@[^@]*" class="form-control">
+    
+    <div *ngIf="txtEmail.errors && (txtEmail.dirty || txtEmail.touched)" class="form-control-feedback">
+        <p *ngIf="txtEmail.errors.required" class="text-danger">Email is required</p>
+        <p *ngIf="txtEmail.errors.pattern" class="text-danger">Email must contain the @ character</p>
+        <!-- <p class="text-danger">Email must be on the gmail.com domain</p>-->
+    </div>
+    <p *ngIf="showDomainError" class="text-danger">Email must on the  domain gmail.com</p>
+    <p>{{msg}}</p>
+  </div>
+  <div class="form-group">
+      <label>Password</label>
+      <input type="password" name="txtPwd" #txtPwd="ngModel" ngModel required minlength="8" class="form-control">
+      <div *ngIf="txtPwd.errors && (txtPwd.dirty || txtPwd.touched)" class="form-control-feedback">
+          <p *ngIf="txtPwd.errors.required" class="text-danger">password is required</p>
+          <p *ngIf="txtPwd.errors.minlength" class="text-danger">password must 8 characters required</p>
+      </div>
+  </div>
+  <div class="form-group" >
+      <label>Languages</label>
+      <select name="language" #language="ngModel" ngModel class="form-control">
+          <option>Please select a language</option>
+          <option>English</option>
+          <option>Hindi</option>
+          <option>Tamil</option>
+          <option>Oriya</option>
+      </select>
+  </div>
+  <button (click)="FormSubmit(frmRegister.value)" type="submit" class="btn btn-primary" [disabled]="frmRegister.invalid">submit</button>
+</form>

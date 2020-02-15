@@ -1,0 +1,16 @@
+dt{
+    font-size: 20px; 
+    color:darkcyan;
+    text-align: center;
+}
+h2{
+    background-color: darkcyan;
+    color: white;
+    text-align: center;
+}
+dd{
+    text-align: center;
+}
+input{
+    background-color: aquamarine;
+}
