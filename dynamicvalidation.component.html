@@ -1,0 +1,30 @@
+<div class="container">
+    <fieldset>
+        <legend>
+            Verify Your Mobile<img [src]="pic" alt="&#164;" width="30" height="30">
+        </legend>
+        <div class="form-group">
+            <label>Select Your Country</label>
+            <div>
+                <select (change)="SelectedCountryChanged(lstCountry.value)" name="lstCountry" #lstCountry="ngModel" ngModel class="form-control">
+                    <option value="India">India</option>
+                    <option value="US">US</option>
+                    <option value="UK">UK</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Mobile Number</label>
+            <div>
+                <input type="text" name="txtMobile" #txtMobile="ngModel" ngModel placeholder="{{tip}}" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <button (click)="VerifyMobile(txtMobile.value)" class="btn btn-primary">VerifyMobile</button>
+        </div>
+    </fieldset>
+    <div>
+        <h2><marquee scrollamount="20">{{mobileError}}</marquee></h2>
+        <p>{{tip}}</p>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="container">
+   <div class="addProduct">
+       <h2>Add New Products</h2>
+       <div class="form-group">
+           <label>Name</label>
+       <div>
+           <input [(ngModel)]="txtName" type="text" class="form-control">
+       </div>
+       </div>
+       <div class="form-group">
+        <label>Price</label>
+         <div>
+            <input [(ngModel)]="txtPrice" type="number" class="form-control">
+         </div>
+        </div>
+        <div class="form-group">
+            <button (click)="AddProduct()" class="btn btn-success">Add Product</button>
+
+        </div>
+        <div>
+            <h2>Products List</h2>
+            <table class="table table-hover">
+                <thead>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </thead>
+                <tbody>
+                    <tr [class.odd]="odd" [class.even]="even" *ngFor="let product of Products; let i=index; let odd=odd; let even=even">
+                        <td>{{product.Name}}</td>
+                        <td>{{product.Price}}</td>
+                        <td>
+                            <button (click)="DeleteClick(i)" class="btn btn-danger">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+   </div>
+</div>

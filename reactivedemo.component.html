@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="form-group">
+        <label>User Name</label>
+        <div>
+            <input type="text" [formControl]="txtName" class="form-control" required ><span *ngIf="txtName.invalid" class="text-danger">Name required</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Your City</label>
+        <select [formControl]="lstCities" class="form-control">
+            <option>Delhi</option>
+            <option>Chennai</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" (click)="UpdateName()">Update Name</button>
+    </div>
+    <div class="form-group">
+        Name: {{txtName.value}}
+        <br>
+        City: {{lstCities.value}}
+    </div>
+</div>

@@ -1,0 +1,21 @@
+.boxStyle{
+    width: 600px;
+    height: 350px;
+    float: left;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid darkcyan;
+    border-radius: 10px;
+}
+label{
+    color: rgb(41, 29, 4);
+}
+.validStyle{
+    border:1px solid green;
+}
+.invalidStyle{
+    border:1px solid red;
+}
+/* form.ng-invalid{
+    background-color: aquamarine;
+} */

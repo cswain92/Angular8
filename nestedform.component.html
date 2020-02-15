@@ -1,0 +1,48 @@
+<div class="container">
+    <h2>Register Product</h2>
+    <form [formGroup]="frmRegister">
+        <fieldset>
+            <legend>Basic Details</legend>
+            <dl>
+                <dt>Name</dt>
+                <dd>
+                    <input type="text" formControlName="Name" class="form-control">
+                </dd>
+                <dt>Price</dt>
+                <dd>
+                    <input type="text" formControlName="Price" class="form-control">
+                </dd>
+            </dl>
+        </fieldset>
+        <div formGroupName="frmDetails">
+            <fieldset style="background-color: lightcyan;">
+                <legend>Stock Details</legend>
+                <dl>
+                    <dt>Shipped To</dt>
+                    <dd>
+                        <select class="form-control" formControlName="City">
+                            <option>Delhi</option>
+                            <option>Bbsr</option>
+                        </select>
+                    </dd>
+                    <dt>Is In Stock</dt>
+                    <dd>
+                        <input type="checkbox" class="form-check-label" formControlName="IsInStock">Yes
+                    </dd>
+                </dl>
+            </fieldset>
+            <br>
+            <button (click)="UpdateDetails()" class="btn btn-primary">Update Details</button>
+        </div>
+    </form>
+    <div style="background-color: aquamarine; color:brown; font-family: bold; font-size: 20px;">
+        <br>
+    Name: {{frmRegister.value.Name}}
+    <br>
+    Price: {{frmRegister.value.Price | currency:'INR'}}
+    <br>
+    City: {{frmRegister.value.frmDetails.City}}
+    <br>
+    IsInStock: {{(frmRegister.value.frmDetails.IsInStock==true)?"Available":"Out Of stock"}}
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>Register Products</h2>
+    <form #frmRegister="ngForm" (submit)="SubmitClick(frmRegister.value)">
+        <div class="form-group">
+            <label>Name</label>
+            <div>
+                <input name="txtName" type="text" #txtName="ngModel" ngModel class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Shipped To</label>
+            <div>
+                <select name="shippedTo" #shippedTo="ngModel" ngModel class="form-control">
+                    <option>HYD</option>
+                    <option>Mumbai</option>
+                </select>
+            </div>
+        </div>
+        <button class="btn btn-primary">Submit</button>
+    </form>
+    <br>
+    Name:{{frmRegister.value.txtName}}
+    <br>
+    ShippedTo:{{frmRegister.value.shippedTo}}
+</div>
